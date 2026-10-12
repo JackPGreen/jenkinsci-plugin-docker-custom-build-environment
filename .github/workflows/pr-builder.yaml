@@ -18,4 +18,4 @@ jobs:
           distribution: 'adopt'
           cache: 'maven'
       - name: Maven, now you do the magic! I enchant you the Bash way!
-        run: mvn --batch-mode --update-snapshots install
+        run: ./mvnw--batch-mode --update-snapshots install
