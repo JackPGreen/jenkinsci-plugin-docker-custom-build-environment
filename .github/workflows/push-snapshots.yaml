@@ -30,7 +30,7 @@ jobs:
         run: |
           PROJECT_VERSION=$(./mvnw -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
           if [[ "$PROJECT_VERSION" == *-SNAPSHOT ]]; then
-            ./mvnw --batch-mode -Prelease deploy
+            ./mvnw --batch-mode --activate-profiles release deploy
           fi
         env:
           MAVEN_USERNAME: ${{ secrets.SONATYPE_OSS_USERNAME }}
